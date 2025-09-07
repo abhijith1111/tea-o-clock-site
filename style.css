@@ -77,29 +77,44 @@ header nav a:hover {
    Hero Section
 ========================= */
 .hero {
+  position: relative;
   height: 100vh;
-  background: url("assets/images/banner.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
-  position: relative;
-  padding: 0 20px;
+  overflow: hidden;
 }
-.hero::before {
-  content: "";
+
+.hero-img {
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Keeps proportions */
+  object-position: center; /* You can adjust: top, bottom, left */
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #1b0c07);
   z-index: 1;
 }
+
 .hero-overlay {
   position: relative;
   z-index: 2;
   max-width: 800px;
+  color: #fff;
+  padding: 0 20px;
 }
+
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -128,38 +143,14 @@ header nav a:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, #1b0c07);
-}
 
-/* =========================
-   Mobile Optimization
-========================= */
+/* Responsive tweaks */
 @media (max-width: 768px) {
-  .hero {
-    height: 80vh; /* slightly smaller height for phones */
-    background-position: top center; /* ensures chai + samosa show */
-    background-attachment: scroll;  /* prevents zoom/crop issue */
-  }
-
   .hero h1 {
     font-size: 2rem;
-    line-height: 1.2;
   }
-
   .hero p {
     font-size: 1rem;
-  }
-
-  .hero .btn {
-    padding: 10px 25px;
-    font-size: 0.9rem;
   }
 }
 
