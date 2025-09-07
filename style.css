@@ -10,40 +10,38 @@ body {
   color: #fff;
   line-height: 1.6;
 }
+
 /* Header */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   background: rgba(27, 12, 7, 0.95);
-  padding: 12px 8%;  /* slightly reduced padding for compact look */
+  padding: 12px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  backdrop-filter: blur(6px); /* adds glassy effect */
+  backdrop-filter: blur(6px);
 }
-
 .logo {
   display: flex;
   align-items: center;
   font-size: 1.8rem;
   font-weight: 700;
   color: #ffcc66;
-  cursor: pointer; /* clickable feel */
+  cursor: pointer;
 }
-
 .logo img {
-  height: 50px;     /* slightly larger logo */
+  height: 50px;
   width: 55px;
   margin-right: 20px;
   border-radius: 50%;
-  transition: transform 0.3s ease; /* smooth hover */
+  transition: transform 0.3s ease;
 }
 .logo img:hover {
-  transform: rotate(-5deg) scale(1.05); /* fun hover effect */
+  transform: rotate(-5deg) scale(1.05);
 }
-
 header nav a {
   margin-left: 25px;
   color: #fff;
@@ -53,9 +51,8 @@ header nav a {
 }
 header nav a:hover {
   color: #ffcc66;
-  transform: translateY(-2px); /* small lift effect */
+  transform: translateY(-2px);
 }
-
 
 /* Hero Section */
 .hero {
@@ -94,7 +91,7 @@ header nav a:hover {
   display: inline-block;
   padding: 12px 30px;
   margin-top: 20px;
-  background: ;
+  background: #ffcc66;
   color: #1b0c07;
   font-weight: 600;
   border-radius: 30px;
@@ -102,21 +99,16 @@ header nav a:hover {
   transition: 0.3s ease;
 }
 .btn:hover {
-  background: ;
+  background: #ffb347;
   transform: scale(1.05);
 }
 .divider {
   height: 80px;
   background: url("https://svgshare.com/i/151z.svg") no-repeat center bottom;
   background-size: cover;
+  margin-top: -5px;
 }
-.divider {
-  position: relative;
-  height: 80px;
-  background: url("https://svgshare.com/i/151z.svg") no-repeat center bottom;
-  background-size: cover;
-  margin-top: -5px; /* removes visible gap */
-}
+
 /* Sections */
 section {
   padding: 80px 10%;
@@ -127,7 +119,6 @@ section h2 {
   margin-bottom: 20px;
   color: #ffcc66;
 }
-
 
 /* About Section */
 .about p {
@@ -156,15 +147,12 @@ section h2 {
   border-left: 5px solid #ffcc66;
   padding-left: 10px;
 }
-
-
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   margin-top: 30px;
 }
-
 .menu-item {
   background: #2d1c15;
   padding: 20px;
@@ -228,14 +216,12 @@ section h2 {
   align-items: flex-start;
   text-align: left;
 }
-
 .details p {
   font-size: 16px;
   margin: 8px 0;
 }
-
 .details i {
-  color: #ff8c00;   /* golden-orange theme */
+  color: #ff8c00;
   margin-right: 10px;
 }
 
@@ -261,7 +247,7 @@ footer {
    Responsive Fixes
 ========================= */
 
-/* Make nav stack on small screens */
+/* Navbar tweaks */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -280,14 +266,75 @@ footer {
   }
 }
 
-/* Font scaling for small screens */
+/* Small screen optimization */
 @media (max-width: 480px) {
+  /* Navbar */
+  header {
+    flex-direction: column;
+    padding: 8px 5%;
+  }
+  .logo {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  .logo img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  header nav {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+  header nav a {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero {
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 0 10px;
+  }
   .hero h1 {
     font-size: 2rem;
+    line-height: 1.2;
   }
   .hero p {
     font-size: 1rem;
+    margin-top: 10px;
   }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Menu & Movies horizontal scroll */
+  .menu-grid,
+  .movies .gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+  }
+  .menu-item,
+  .movies img {
+    flex: 0 0 75%;
+    scroll-snap-align: center;
+  }
+  .menu-item img,
+  .movies img {
+    height: auto;
+    max-height: 220px;
+  }
+
+  /* Font scaling */
   section h2 {
     font-size: 2rem;
   }
