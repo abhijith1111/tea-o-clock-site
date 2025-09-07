@@ -139,6 +139,31 @@ header nav a:hover {
 }
 
 /* =========================
+   Mobile Optimization
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh; /* slightly smaller height for phones */
+    background-position: top center; /* ensures chai + samosa show */
+    background-attachment: scroll;  /* prevents zoom/crop issue */
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
    Divider
 ========================= */
 .divider {
