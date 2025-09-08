@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="458e5bb0-6fee-4e8e-b6d7-245b046ce168" name="Changes" comment="" />
+    <list default="true" id="458e5bb0-6fee-4e8e-b6d7-245b046ce168" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/banner-mobile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/film/reallogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/film/reallogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/banner-desktop.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/preview.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/preview.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,16 +46,16 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/HOME/PycharmProjects/PythonProject4"
+    "last_opened_file_path": "C:/Users/HOME/PycharmProjects/PythonProject4/assets/film"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HOME\PycharmProjects\PythonProject4\assets\film" />
+      <recent name="C:\Users\HOME\PycharmProjects\PythonProject4\assets\images" />
       <recent name="C:\Users\HOME\PycharmProjects\PythonProject4" />
       <recent name="C:\Users\HOME\PycharmProjects\PythonProject4\assets" />
-      <recent name="C:\Users\HOME\PycharmProjects\PythonProject4\assets\film" />
       <recent name="C:\Users\HOME\PycharmProjects\PythonProject4\assets\Tea" />
-      <recent name="C:\Users\HOME\PycharmProjects\PythonProject4\assets\images" />
     </key>
   </component>
   <component name="SharedIndexes">

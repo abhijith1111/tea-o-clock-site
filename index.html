@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta property="og:title" content="Tea O' Clock Café" />
   <meta property="og:description" content="Sip, relax, and enjoy the finest teas." />
-  <meta property="og:image" content="https://myteaoclock.netlify.app/preview.jpg" />
+  <meta property="og:image" content="https://myteaoclock.netlify.app/preview.png" />
   <meta property="og:url" content="https://myteaoclock.netlify.app/" />
   <meta property="og:type" content="website" />
   <!-- Google Fonts -->
@@ -31,7 +31,13 @@
 </header>
 <!-- Hero Section -->
 <section class="hero" id="home">
-  <img src="assets/images/banner.jpg" alt="Tea and Samosa Banner" class="hero-img">
+  <picture>
+    <!-- Mobile banner -->
+    <source srcset="assets/images/banner-mobile.jpg" media="(max-width: 768px)">
+    <!-- Laptop/Desktop banner -->
+    <img src="assets/images/banner-desktop.jpg" alt="Tea and Samosa Banner" class="hero-img">
+  </picture>
+
   <div class="hero-overlay">
     <h1>Relax with <span>Tea & Samosa</span></h1>
     <p>Where every cup of chai meets a story, a samosa, and a classic movie</p>
@@ -251,4 +257,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

@@ -30,6 +30,8 @@ header {
   backdrop-filter: blur(6px);
   transition: background 0.3s, box-shadow 0.3s;
 }
+
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -48,6 +50,8 @@ header {
 .logo img:hover {
   transform: rotate(-5deg) scale(1.05);
 }
+
+/* Default Nav (Desktop) */
 header nav {
   display: flex;
   gap: 25px;
@@ -65,34 +69,84 @@ header nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Menu Toggle (hidden by default) */
 .menu-toggle {
   display: none;
   font-size: 2rem;
   color: #ffcc66;
   cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* =========================
+   Mobile Responsive Navbar
+========================= */
+@media (max-width: 768px) {
+  /* Show hamburger on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide nav links initially */
+  header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: rgba(27, 12, 7, 0.95);
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  /* Show nav when active */
+  header nav.active {
+    display: flex;
+  }
+}
+
+/* Ensure desktop always shows nav inline */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+  header nav {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+  }
 }
 
 /* =========================
    Hero Section
 ========================= */
 .hero {
-  min-height: 100vh; /* ensures it takes full screen height */
+  position: relative;
   width: 100%;
-  background-image: url("assets/images/banner.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;   /* make sure full image fits */
-  background-position: center top;
-  background-color: #1b0c07; /* fallback background */
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
-  position: relative;
-  padding: 0 20px;
 }
 
+/* Hero image - auto swaps between mobile & desktop */
+.hero img.hero-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* fills section */
+  object-position: center;  /* center focus */
+  z-index: 0;
+}
+
+/* Dark overlay */
 .hero::before {
   content: "";
   position: absolute;
@@ -102,10 +156,23 @@ header nav a:hover {
   z-index: 1;
 }
 
+/* Smooth transition at bottom */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 150px;  /* adjust fade height */
+  background: linear-gradient(to bottom, transparent, #1b0c07);
+  z-index: 2;
+}
+
+/* Overlay text content */
 .hero-overlay {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 800px;
+  padding: 0 20px;
 }
 
 .hero h1 {
@@ -114,10 +181,7 @@ header nav a:hover {
   margin-bottom: 15px;
   line-height: 1.3;
 }
-
-.hero h1 span {
-  color: #ffcc66;
-}
+.hero h1 span { color: #ffcc66; }
 
 .hero p {
   font-size: 1.3rem;
@@ -135,36 +199,28 @@ header nav a:hover {
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .hero .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 /* =========================
-   Mobile Fix
+   Mobile Optimization
 ========================= */
 @media (max-width: 768px) {
   .hero {
-    min-height: 90vh;
-    background-size: cover;  /* use cover on small devices */
-    background-position: center center;
+    height: 90vh;
   }
 
-  .hero h1 {
-    font-size: 2rem;
-    line-height: 1.2;
+  .hero img.hero-img {
+    object-position: top center; /* focus chai+samosa */
   }
 
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero .btn {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-  }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .hero .btn { padding: 10px 25px; font-size: 0.9rem; }
 }
+
 
 /* =========================
    Divider
